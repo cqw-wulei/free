@@ -7,7 +7,7 @@ class Login extends Component {
         input: [
             {
                 id: 1,
-                txt: '账号',
+                txt: '账号', 
                 type: 'text',
                 name: 'name',
                 infor: '请输入您的账号',
