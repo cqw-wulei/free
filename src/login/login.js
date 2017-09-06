@@ -33,9 +33,9 @@ class Login extends Component {
         };
     }
     handleChange(event) {/*监听用户输入*/
-        let state = {};
-        state[event.target.name] = event.target.value
-        this.setState(state);
+        const name = event.target.name;
+        const value = event.target.value;
+        this.setState({[name]: value});
     }
     mySubmit() {/*监听用户提交*/
         console.log('submit',this.state);
