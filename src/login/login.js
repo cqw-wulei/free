@@ -3,21 +3,8 @@ import Item from './item.js';
 import './login.css';
 
 class Login extends Component {
-    static defaultProps = {
-        name: '',
-        password: '',
-    };
-    constructor(props) {
-        super();
-        this.handleChange = this.handleChange.bind(this);
-        this.mySubmit = this.mySubmit.bind(this);
-        this.state = {
-            name: '',
-            password: '',
-        };
-    }
-    initSubmit() {
-        let input = [
+    static defaultProps = {/*不能修改的数据，只用于初始化*/
+        input: [
             {
                 id: 1,
                 txt: '账号',
@@ -34,15 +21,23 @@ class Login extends Component {
                 infor: '请输入您的密码',
                 msg: '您已输入密码',
             },
-        ];
-        return input;
+        ]
+    }; 
+    constructor(props) {/*构造函数*/
+        super(props);
+        this.handleChange = this.handleChange.bind(this);
+        this.mySubmit = this.mySubmit.bind(this);
+        this.state = {/*状态机*/
+            name: '',
+            password: '',
+        };
     }
-    handleChange(event) {
+    handleChange(event) {/*监听用户输入*/
         let state = {};
         state[event.target.name] = event.target.value
         this.setState(state);
     }
-    mySubmit() {
+    mySubmit() {/*监听用户提交*/
         console.log('submit',this.state);
         return false;
     }
@@ -53,7 +48,7 @@ class Login extends Component {
             <div className="login">
                 <p className="login-title">这是{this.props.name}的登录页</p>
                 {                    
-                    this.initSubmit().map(function(item){
+                    this.props.input.map(function(item){
                         return <Item key={item.id} updateState={handleChange} txt={item.txt} type={item.type} name={item.name} infor={item.infor} msg={item.msg} val={state[item.name]} />;
                     })
                 }

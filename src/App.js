@@ -10,7 +10,7 @@ class App extends Component {
     }
     qianming() {
         return "陈其文";
-    }    
+    }     
     render() {
         return (
             <div className="App">
