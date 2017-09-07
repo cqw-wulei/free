@@ -21,6 +21,14 @@ class Login extends Component {
                 infor: '请输入您的密码',
                 msg: '您已输入密码',
             },
+            {
+                id: 3,
+                txt: '暗号',
+                type: 'number',
+                name: 'sign',
+                infor: '请输入您的暗号',
+                msg: '您已输入暗号',
+            },
         ]
     }; 
     constructor(props) {/*构造函数*/
@@ -30,6 +38,7 @@ class Login extends Component {
         this.state = {/*状态机*/
             name: '',
             password: '',
+            sign: '',
         };
     }
     handleChange(event) {/*监听用户输入*/
