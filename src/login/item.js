@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 class Item extends Component {
-    constructor(props) {
+    /*constructor(props) {
         super(props);
-    }
+    }*/
     render() {
         return (
             <div className="login-item">

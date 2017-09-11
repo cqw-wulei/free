@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import Login from './login/login.js';
+import MyRouter from './router.js';
 
 class App extends Component {
-    constructor(props) {
+    /*constructor(props) {
         super();
         //console.log(this);
-    }
+    }*/
     qianming() {
         return "陈其文";
     }     
@@ -20,8 +20,8 @@ class App extends Component {
                 </div>
                 <p className="App-intro">
                     To get started, edit <code>src/App.js</code> and save to reload.
-                </p>*/}
-                <Login name={this.qianming()} />
+                </p>*/}                
+                <MyRouter qianming={this.qianming()} />
             </div>
         );
     }

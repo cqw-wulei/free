@@ -46,7 +46,8 @@ class Login extends Component {
         const value = event.target.value;
         this.setState({[name]: value});
     }
-    mySubmit() {/*监听用户提交*/
+    mySubmit(event) {/*监听用户提交*/
+        event.preventDefault();
         console.log('submit',this.state);
         return false;
     }
@@ -55,14 +56,15 @@ class Login extends Component {
         let state = this.state;
         return (
             <div className="login">
-                <p className="login-title">这是{this.props.name}的登录页</p>
+                <p className="login-title">这是登录页</p>
                 {                    
                     this.props.input.map(function(item){
                         return <Item key={item.id} updateState={handleChange} txt={item.txt} type={item.type} name={item.name} infor={item.infor} msg={item.msg} val={state[item.name]} />;
                     })
                 }
                 <div className="login-item">
-                    <a href="javascript:;" className="login-submit" onClick={this.mySubmit}>登录</a>
+                    <a href="/" className="login-submit" onClick={this.mySubmit}>登录</a>
+                    <a href="/" className="to-home">返回首页</a>
                 </div>
             </div>
         );
