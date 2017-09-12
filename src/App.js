@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import MyRouter from './router.js';
+import { Button } from 'react-weui';
+
+import 'weui';
+import 'react-weui/build/packages/react-weui.css';
 
 class App extends Component {
     /*constructor(props) {
@@ -14,6 +18,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                <Button>this Button</Button>
                 {/*<div className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                     <h2>My name is {this.qianming()}</h2>
