@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import Item from './item.js';
 import './login.css';
 
@@ -63,8 +64,8 @@ class Login extends Component {
                     })
                 }
                 <div className="login-item">
-                    <a href="/" className="login-submit" onClick={this.mySubmit}>登录</a>
-                    <a href="/" className="to-home">返回首页</a>
+                    <Link to="/" className="login-submit" onClick={this.mySubmit}>登录</Link>
+                    <Link to="/" className="to-home">返回首页</Link>
                 </div>
             </div>
         );
