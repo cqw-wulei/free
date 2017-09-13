@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import feact from 'node-fetch';
 import Item from './item.js';
 import './login.css';
 
@@ -50,8 +51,15 @@ class Login extends Component {
     mySubmit(event) {/*监听用户提交*/
         event.preventDefault();
         console.log('submit',this.state);
-        return false;
-    }
+        //引入fecth.js，用来前后端数据交互
+		fetch('http://httpbin.org/post', { method: 'POST', body: JSON.stringify(this.state) })
+		    .then(function(res) {
+		        return res.json();
+		    }).then(function(json) {
+		        console.log(json);
+		    });
+		        return false;
+		    }
     render() {
         let handleChange = this.handleChange;
         let state = this.state;
