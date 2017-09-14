@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import feact from 'node-fetch';
+import fetch from 'node-fetch';
 import Item from './item.js';
 import './login.css';
 
@@ -52,7 +52,7 @@ class Login extends Component {
         event.preventDefault();
         console.log('submit',this.state);
         //引入fecth.js，用来前后端数据交互
-		fetch('http://httpbin.org/post', { method: 'POST', body: JSON.stringify(this.state) })
+		fetch('http://127.0.0.1:3001/login', { method: 'POST', body: JSON.stringify(this.state) })
 		    .then(function(res) {
 		        return res.json();
 		    }).then(function(json) {
