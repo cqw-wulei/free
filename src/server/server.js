@@ -12,7 +12,7 @@ app.post('/login', function (req, res) {
         console.log( data );
         res.end( data );
     });
-})
+});
 
 var server = app.listen(3001, function () {
 
@@ -21,4 +21,4 @@ var server = app.listen(3001, function () {
 
     console.log("应用实例，访问地址为 http://%s:%s", host, port)
 
-})
+});
